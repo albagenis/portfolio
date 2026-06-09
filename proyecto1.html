@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Alba Genís</title>
+  <link rel="stylesheet" href="style-proyectos.css">
+</head>
+
+<body>
+
+<!-- -------------------------------- MENU -------------------------------- -->
+<header>
+  <div class="left">
+    <a href="index.html">ALBA GENÍS</a>
+  </div>
+
+  <nav>
+    <a href="index.html" class="nav-item">
+      <span class="icon">
+        <span class="bracket">[</span>
+        <svg width="16" height="16" viewBox="0 0 20 20">
+          <circle cx="10" cy="10" r="4" class="dot"/>
+        </svg>
+        <span class="bracket">]</span>
+      </span>
+      WORK
+    </a>
+
+    <a href="about.html" class="nav-item">
+      <span class="icon">
+        <span class="bracket">[</span>
+        <svg width="16" height="16" viewBox="0 0 20 20">
+          <circle cx="10" cy="10" r="4" class="dot"/>
+        </svg>
+        <span class="bracket">]</span>
+      </span>
+      ABOUT
+    </a>
+  </nav>
+
+  <div class="right">GRAPHIC DESIGNER</div>
+</header>
+<!-- -------------------------------- FIN MENU -------------------------------- -->
+
+
+<main class="project-page">
+
+  <!-- 🎥 CARRUSEL -->
+  <section class="carousel">
+    <div class="carousel-track">
+
+      <img src="contenido/proyecto 1/carrusel/proyecto1-img1.jpg" alt="Proyecto 1 imagen 1">
+
+      <video src="contenido/proyecto 1/carrusel/proyecto1-video1.mp4" autoplay loop muted playsinline></video>
+
+      <img src="contenido/proyecto 1/carrusel/proyecto-1-img2.jpg" alt="Proyecto 1 imagen 2">
+
+      <video src="contenido/proyecto 1/carrusel/proyecto1-video2.mp4" autoplay loop muted playsinline></video>
+
+      <video src="contenido/proyecto 1/carrusel/proyecto1-video3.mp4" autoplay loop muted playsinline></video>
+
+      <div class="carousel-item">
+        <video src="contenido/proyecto 1/carrusel/proyecto1-video4.mp4" controls playsinline></video>
+
+        <a href="https://www.instagram.com/reel/DF_DJ8rI_f9/" target="_blank" class="insta-btn">
+         INSTAGRAM
+        </a>
+      </div>
+
+      <img src="contenido/proyecto 1/carrusel/proyecto1-img3.jpg" alt="Proyecto 1 imagen 3">
+
+    </div>
+  </section>
+
+
+  <!-- 📝 TEXTO -->
+  <section class="project-info">
+    <h1>Will you be my valentine?</h1>
+
+    <p class="subtitle">
+      Campaign Concept Development / Content Creation / Graphic Design
+    </p>
+
+    <p>
+      
+      Design and development of a series of graphic postcards <br> included with online orders during the Valentine's Day campaign.
+    </p>
+
+    <p>
+      The campaign was further supported by a street activation in collaboration with influencer Karen González,
+    </p>
+
+    <div class="info-bottom">
+      <a href="proyecto5.html" class="prev">PREVIOUS PROJECT</a>
+      <p class="client">CLIENT: ULANKA</p>
+      <a href="proyecto4.html" class="next">NEXT PROJECT</a>
+    </div>
+  </section>
+
+</main>
+
+
+<script>
+  window.addEventListener("load", () => {
+    const carousel = document.querySelector(".carousel");
+    const track = document.querySelector(".carousel-track");
+
+    if (!carousel || !track) return;
+
+    const items = track.children;
+    const centerItem = items[2];
+
+    if (!centerItem) return;
+
+    const offset =
+      centerItem.offsetLeft -
+      (carousel.offsetWidth / 2) +
+      (centerItem.offsetWidth / 2);
+
+    carousel.scrollLeft = offset;
+  });
+
+  const carousel = document.querySelector(".carousel");
+
+  if (carousel) {
+    carousel.addEventListener("wheel", (event) => {
+      if (Math.abs(event.deltaY) > Math.abs(event.deltaX)) {
+        event.preventDefault();
+        carousel.scrollLeft += event.deltaY;
+      }
+    }, { passive: false });
+  }
+</script>
+
+</body>
+</html>

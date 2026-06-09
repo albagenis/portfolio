@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Alba Genís</title>
+  <link rel="stylesheet" href="style-proyectos.css">
+</head>
+
+<body>
+
+<!-- -------------------------------- MENU -------------------------------- -->
+<header>
+  <div class="left">
+    <a href="index.html">ALBA GENÍS</a>
+  </div>
+
+  <nav>
+    <a href="index.html" class="nav-item">
+      <span class="icon">
+        <span class="bracket">[</span>
+        <svg width="16" height="16" viewBox="0 0 20 20">
+          <circle cx="10" cy="10" r="4" class="dot"/>
+        </svg>
+        <span class="bracket">]</span>
+      </span>
+      WORK
+    </a>
+
+    <a href="about.html" class="nav-item">
+      <span class="icon">
+        <span class="bracket">[</span>
+        <svg width="16" height="16" viewBox="0 0 20 20">
+          <circle cx="10" cy="10" r="4" class="dot"/>
+        </svg>
+        <span class="bracket">]</span>
+      </span>
+      ABOUT
+    </a>
+  </nav>
+
+  <div class="right">GRAPHIC DESIGNER</div>
+</header>
+<!-- -------------------------------- FIN MENU -------------------------------- -->
+
+
+<main class="project-page">
+
+  <!-- 🎥 CARRUSEL -->
+  <section class="carousel">
+    <div class="carousel-track">
+
+      <img src="contenido/proyecto 4/carrusel/proyecto4-img2.jpg" alt="Proyecto 1 imagen 1">
+
+      
+      <img src="contenido/proyecto 4/carrusel/proyecto4-img8.jpg" alt="Proyecto 1 imagen 2">
+
+      <img src="contenido/proyecto 4/portada-invitacion-leconfesionaire2.jpg" alt="Proyecto 1 imagen 1">
+
+      <img src="contenido/proyecto 4/carrusel/proyecto4-img7.jpg" alt="Proyecto 1 imagen 1">
+      
+      <img src="contenido/proyecto 4/carrusel/proyecto4-img4.jpg" alt="Proyecto 1 imagen 1">
+      
+      <img src="contenido/proyecto 4/carrusel/proyecto4-img3.jpg" alt="Proyecto 1 imagen 1">
+
+       <img src="contenido/proyecto 4/carrusel/proyecto4-img5.jpg" alt="Proyecto 1 imagen 1">
+
+       <img src="contenido/proyecto 4/carrusel/proyecto4-img6.jpg" alt="Proyecto 1 imagen 1">
+
+
+      <div class="carousel-item">
+        <video src="contenido/proyecto 4/carrusel/proyecto4-video-acción.mp4" controls playsinline></video>
+
+        <a href="https://www.instagram.com/reel/DWO0NH6jFCK/" target="_blank" class="insta-btn">
+          INSTAGRAM
+        </a>
+      </div>
+
+
+    </div>
+  </section>
+
+
+  <!-- 📝 TEXTO -->
+  <section class="project-info">
+    <h1>Le confesionaire by Gigi Vives</h1>
+
+    <p class="subtitle">
+      Graphic Design / Art Direction / Packaging
+    </p>
+
+    <p>
+      
+      Experiential activation at Madrid Fashion Week where visitors received <br> personalized fashion advice from Gigi Vives. 
+    </p>
+
+    <p>
+      Responsible for the project's visual identity, invitations, <br> digital communication and stand art direction.
+
+    <div class="info-bottom">
+      <a href="#" class="prev">PREVIOUS PROJECT</a>
+      <p class="client">CLIENT: ULANKA</p>
+      <a href="proyecto6.html" class="next">NEXT PROJECT</a>
+    </div>
+  </section>
+
+</main>
+
+
+<script>
+  window.addEventListener("load", () => {
+    const carousel = document.querySelector(".carousel");
+    const track = document.querySelector(".carousel-track");
+
+    if (!carousel || !track) return;
+
+    const items = track.children;
+    const centerItem = items[2];
+
+    if (!centerItem) return;
+
+    const offset =
+      centerItem.offsetLeft -
+      (carousel.offsetWidth / 2) +
+      (centerItem.offsetWidth / 2);
+
+    carousel.scrollLeft = offset;
+  });
+
+  const carousel = document.querySelector(".carousel");
+
+  if (carousel) {
+    carousel.addEventListener("wheel", (event) => {
+      if (Math.abs(event.deltaY) > Math.abs(event.deltaX)) {
+        event.preventDefault();
+        carousel.scrollLeft += event.deltaY;
+      }
+    }, { passive: false });
+  }
+</script>
+
+</body>
+</html>

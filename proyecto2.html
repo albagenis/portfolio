@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto – Alba Genís</title>
+  <link rel="stylesheet" href="style-proyectos.css">
+</head>
+<body>
+
+  <!-- HEADER (igual que home) -->
+  <header>
+    <div class="left">
+        <a href="homepage.html">ALBA GENÍS</a>
+    </div>
+    <nav>
+      <a href="homepage.html">WORK</a>
+      <a href="#">ABOUT</a>
+      <a href="#">FRAGMENTS</a>
+    </nav>
+    <div class="right">GRAPHIC DESIGNER</div>
+  </header>
+
+  <main class="project-page">
+
+    <!-- 🎥 CARRUSEL -->
+    <section class="carousel">
+      <div class="carousel-track">
+
+        <img src="contenido/proyecto 2/carrusel/proyecto2-img1.jpg">
+        <img src="contenido/proyecto 2/carrusel/proyecto2-img2.jpg">
+      
+
+        <video src="contenido/proyecto 2.mp4" autoplay loop muted playsinline></video>
+
+        <img src="contenido/proyecto 2/carrusel/proyecto2-img3.jpg">
+        <img src="contenido/proyecto 2/carrusel/proyecto2-img4.jpg">
+
+        <div class="carousel-item">
+
+          <video src="contenido/proyecto 2/carrusel/proyecto2-video2.mp4" controls playsinline></video>
+
+        </div>
+    
+      
+      </div>
+    </section>
+
+    <!-- 📝 TEXTO -->
+    <section class="project-info">
+      <h1>Will you be my valentine?</h1>
+
+      <p class="subtitle">
+        Conceptualización de campaña / Creación de contenido / Diseño gráfico
+      </p>
+
+      <p>
+        Desarrollo de campaña para San Valentín 2025. <br> El proyecto consistió en desarrollar
+        una serie de postales gráficas para entregar en los pedidos web.
+      </p>
+
+      <p>
+        Aprovechando estas postales, se realizó una acción en calle con la influencer Karen González.
+      </p>
+      <div class="info-bottom">
+        <a href="proyecto1.html" class="prev">PREVIOUS PROJECT</a>
+
+        <p class="client">CLIENTE ULANKA</p>
+
+        <a href="proyecto1.html" class="next">NEXT PROJECT</a>
+      </div>
+
+    </section>
+
+
+
+  </main>
+  <script>
+    window.addEventListener("load", () => {
+      const carousel = document.querySelector(".carousel");
+      const track = document.querySelector(".carousel-track");
+
+      const items = track.children;
+      const centerItem = items[2]; // ajusta si hace falta
+
+      const offset =
+        centerItem.offsetLeft -
+        (carousel.offsetWidth / 2) +
+        (centerItem.offsetWidth / 2);
+
+      carousel.scrollLeft = offset;
+    });
+  </script>
+</body>
+</html>
